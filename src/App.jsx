@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { MusicProvider } from "./context/MusicContext";
 import "./App.css";
 
@@ -17,7 +17,7 @@ import AuthenticatedLayout from "./components/AuthenticatedLayout";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <MusicProvider>
         <Routes>
           {/* Public Routes */}
@@ -34,6 +34,6 @@ export default function App() {
           </Route>
         </Routes>
       </MusicProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
