@@ -35,7 +35,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://192.168.1.13:5000",
+        target:
+          "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/",
         changeOrigin: true,
       },
     },

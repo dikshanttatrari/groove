@@ -49,7 +49,9 @@ export default function Home() {
     e?.stopPropagation();
     setPlayingId(songId);
     try {
-      const res = await fetch(`/api/search?id=${songId}`);
+      const res = await fetch(
+        `https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/search?id=${songId}`,
+      );
       const data = await res.json();
       const rawSong = data[songId];
       if (rawSong) {

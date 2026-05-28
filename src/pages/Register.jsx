@@ -57,11 +57,14 @@ export default function Register() {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/auth/verify-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, otp }),
-      });
+      const res = await fetch(
+        "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/auth/verify-otp",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, otp }),
+        },
+      );
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.msg || "Verification failed");

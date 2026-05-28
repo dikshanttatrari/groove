@@ -27,7 +27,7 @@ export default function Login() {
 
     try {
       const res = await fetch(
-        "https://groove-7xpvwjxx0-dikshants-projects-9f5680cd.vercel.app/api/auth/login",
+        "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -16,7 +16,9 @@ export default function Search() {
 
     setLoading(true);
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+      const res = await fetch(
+        `https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/search?q=${encodeURIComponent(query)}`,
+      );
       const data = await res.json();
       const rawTracks = data.songs?.data || data.results || [];
       const cleanTracks = rawTracks

@@ -16,7 +16,9 @@ export default function PlaylistDetail() {
     const fetchPlaylist = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://192.168.1.13:5000/api/playlist/${id}`);
+        const res = await fetch(
+          `https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/playlist/${id}`,
+        );
 
         if (!res.ok) throw new Error("Failed to fetch playlist");
 
