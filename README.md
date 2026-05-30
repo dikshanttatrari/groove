@@ -33,5 +33,5 @@ Instead of relying on the browser's public download manager (which clutters the 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/dikshanttatrari/groove.git](https://github.com/dikshanttatrari/groove.git)
+   git clone https://github.com/dikshanttatrari/groove.git
    cd groove
