@@ -41,9 +41,9 @@ export default function AdminDashboard() {
     setLoading(true);
     try {
       const [statsRes, recentRes, usersRes] = await Promise.all([
-        fetch("http://192.168.0.103:5000/api/admin/stats"),
-        fetch("http://192.168.0.103:5000/api/admin/recent"),
-        fetch("http://192.168.0.103:5000/api/admin/users"),
+        fetch("https://groove-api-three.vercel.app/api/admin/stats"),
+        fetch("https://groove-api-three.vercel.app/api/admin/recent"),
+        fetch("https://groove-api-three.vercel.app/api/admin/users"),
       ]);
 
       if (statsRes.ok) setStats(await statsRes.json());

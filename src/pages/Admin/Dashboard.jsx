@@ -22,10 +22,10 @@ export default function Dashboard() {
     const fetchAdminData = async () => {
       try {
         const [statsRes, songsRes] = await Promise.all([
-          fetch("http://192.168.0.103:5000/api/admin/stats").then(
+          fetch("https://groove-api-three.vercel.app/api/admin/stats").then(
             (res) => res.json(),
           ),
-          fetch("http://192.168.0.103:5000/api/admin/top-songs").then(
+          fetch("https://groove-api-three.vercel.app/api/admin/top-songs").then(
             (res) => res.json(),
           ),
         ]);

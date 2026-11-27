@@ -27,7 +27,7 @@ export default function Login() {
 
     try {
       const res = await fetch(
-        "http://192.168.0.103:5000/api/auth/login",
+        "https://groove-api-three.vercel.app/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

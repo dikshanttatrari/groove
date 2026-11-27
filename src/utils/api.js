@@ -1,4 +1,4 @@
-export const API_BASE_URL = "http://192.168.0.103:5000";
+export const API_BASE_URL = "https://groove-api-three.vercel.app";
 
 export const apiUrl = (path) => {
   const normalized = path.startsWith("/") ? path : `/${path}`;

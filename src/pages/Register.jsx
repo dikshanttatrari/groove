@@ -33,7 +33,7 @@ export default function Register() {
 
     try {
       const res = await fetch(
-        "http://192.168.0.103:5000/api/auth/request-otp",
+        "https://groove-api-three.vercel.app/api/auth/request-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -61,7 +61,7 @@ export default function Register() {
 
     try {
       const res = await fetch(
-        "http://192.168.0.103:5000/api/auth/verify-otp",
+        "https://groove-api-three.vercel.app/api/auth/verify-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
