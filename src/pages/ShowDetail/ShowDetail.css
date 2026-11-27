@@ -1,0 +1,256 @@
+/* ShowDetail.css */
+
+.show-detail-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-color: #121212; /* Deep Spotify-style dark */
+  color: #fff;
+  padding-bottom: 150px; /* Room for the mini-player */
+  overflow-x: hidden;
+}
+
+/* =========================================
+   TOP GRADIENT & HEADER
+   ========================================= */
+.vibe-gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  z-index: 0;
+  opacity: 0.5;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.vibe-gradient-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(40px) saturate(1.5);
+  transform: scale(1.2);
+}
+
+.show-nav {
+  position: sticky;
+  top: 0;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  /* Subtle dark fade when scrolling down */
+  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.8) 0%, transparent 100%);
+}
+
+.show-nav-circle-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.show-nav-circle-btn:active {
+  transform: scale(0.9);
+}
+
+/* =========================================
+   MAIN INFO BLOCK (Image + Text)
+   ========================================= */
+.vibe-header-block {
+  position: relative;
+  z-index: 10;
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.vibe-cover-art {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px; /* Slightly sharper corners like the reference */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  background-color: #282828;
+}
+
+.vibe-title-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vibe-title-block h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  font-family: 'EB Garamond', Garamond, serif; /* Bringing in that elegant serif from your screenshot */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.vibe-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  font-weight: 500;
+}
+
+/* =========================================
+   ACTION BAR (Play, Heart, Download)
+   ========================================= */
+.vibe-action-bar {
+  position: relative;
+  z-index: 10;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vibe-play-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #1DB954;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.vibe-play-circle:hover {
+  transform: scale(1.05);
+  background-color: #1ed760;
+}
+
+.vibe-play-circle:active {
+  transform: scale(0.95);
+}
+
+.vibe-secondary-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #b3b3b3;
+}
+
+.vibe-icon-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.vibe-icon-btn:hover {
+  color: #fff;
+}
+
+/* =========================================
+   TRACKLIST / EPISODES
+   ========================================= */
+.vibe-tracklist {
+  position: relative;
+  z-index: 10;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vibe-track-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.vibe-track-row:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.vibe-track-row.active-playing .vibe-track-title {
+  color: #1DB954;
+}
+
+.vibe-track-index {
+  width: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.vibe-track-art {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.vibe-track-info {
+  flex: 1;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.vibe-track-title {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vibe-track-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vibe-track-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #b3b3b3;
+}
+
+/* Mobile Tweak */
+@media (max-width: 480px) {
+  .vibe-header-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .vibe-title-block h1 {
+    font-size: 1.8rem;
+  }
+}

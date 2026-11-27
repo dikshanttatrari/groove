@@ -1,0 +1,257 @@
+/* Library.css */
+
+.lib-page-padding {
+  padding-bottom: 120px; 
+}
+
+/* --- AESTHETIC CONTROLS --- */
+.controls-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 28px; 
+}
+.filter-row { display: flex; gap: 10px; }
+
+.aesthetic-pill { 
+  background-color: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  color: #a0a0a0; 
+  padding: 8px 22px; 
+  border-radius: 30px; 
+  font-size: 0.9rem; 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer; 
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.aesthetic-pill.active { 
+  background-color: #f4f3ec; 
+  color: #110f0d; 
+  border-color: #f4f3ec;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(244, 243, 236, 0.2);
+}
+
+.view-toggles { display: flex; gap: 12px; color: #666; }
+.view-btn { 
+  background: none; border: none; color: inherit; 
+  cursor: pointer; transition: color 0.3s; 
+  display: flex; align-items: center; justify-content: center;
+}
+.view-btn.active { color: #f4f3ec; }
+
+/* --- DREAMY LIKED SONGS BANNER --- */
+.dreamy-liked-block {
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(30, 135, 73, 0.8) 0%, rgba(13, 59, 31, 0.9) 100%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(13, 59, 31, 0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ambient glow inside the card */
+.dreamy-liked-block::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -20%;
+  width: 150%; height: 150%;
+  background: radial-gradient(circle at center, rgba(46, 204, 113, 0.4) 0%, transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.liked-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.liked-icon-glass {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.liked-text-aesthetic h3 { 
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem; 
+  margin: 0 0 2px 0; 
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.liked-text-aesthetic p { 
+  margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.7); font-family: sans-serif; 
+}
+
+/* --- GRID & LIST LAYOUTS --- */
+.lib-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (min-width: 768px) { .lib-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+.lib-list { display: flex; flex-direction: column; gap: 16px; }
+
+/* --- AESTHETIC CARDS --- */
+.aesthetic-card { 
+  display: flex; flex-direction: column; gap: 12px; 
+}
+.aesthetic-art { 
+  width: 100%; aspect-ratio: 1/1; 
+  border-radius: 16px; 
+  object-fit: cover; 
+  background-color: #161412; 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.aesthetic-card:hover .aesthetic-art {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* List Row */
+.aesthetic-row { 
+  display: flex; align-items: center; gap: 16px; 
+  padding: 8px; border-radius: 16px; 
+  transition: background 0.3s; 
+}
+.aesthetic-row:hover { background-color: rgba(255,255,255,0.03); }
+.aesthetic-row .aesthetic-art { 
+  width: 70px; height: 70px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+.playlist-text-block h4 {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    font-family: 'EB Garamond', serif;
+  font-size: 1.4rem; margin: 0 0 2px 0; color: #f4f3ec; line-height: 1.1;
+
+}
+
+.playlist-text-block p { 
+  margin: 0; font-size: 0.8rem; color: #888; font-family: sans-serif;
+}
+
+/* Minimalist Create Art */
+.create-art-minimal {
+  width: 100%; aspect-ratio: 1/1; 
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1.5px dashed rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.aesthetic-row .create-art-minimal {
+  width: 70px; height: 70px; border-radius: 12px;
+}
+.aesthetic-card:hover .create-art-minimal,
+.aesthetic-row:hover .create-art-minimal {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- CINEMATIC MODAL --- */
+.aesthetic-modal {
+  background: rgba(22, 20, 18, 0.75);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08); 
+  padding: 36px 32px; 
+  border-radius: 28px; 
+  width: 90%; max-width: 380px; 
+  display: flex; flex-direction: column; gap: 24px; 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.aesthetic-modal h2 { font-family: 'EB Garamond', serif; font-size: 2.2rem; margin: 0; color: #f4f3ec; text-align: center; }
+.aesthetic-input { 
+  background-color: rgba(0,0,0,0.3); 
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  color: #f4f3ec; 
+  padding: 12px 8px; 
+  font-size: 1.2rem; outline: none; font-family: 'EB Garamond', serif; 
+  transition: border-color 0.3s;
+  text-align: center;
+}
+.aesthetic-input:focus { border-color: #f4f3ec; }
+.btn-ghost { 
+  flex: 1; padding: 16px; background: transparent; border: none; 
+  color: #888; font-size: 1.1rem; border-radius: 16px; transition: color 0.2s;
+}
+.btn-ghost:hover { color: #f4f3ec; }
+.btn-glow { 
+  flex: 1; padding: 16px; background: #f4f3ec; border: none; 
+  color: #110f0d; font-weight: 600; border-radius: 16px; font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(244, 243, 236, 0.3);
+}
+
+/* --- CINEMATIC MODAL (CENTER FIX) --- */
+.modal-overlay { 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: rgba(17, 15, 13, 0.85); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 9999; /* Forces it above all navigation bars */
+}
+
+.aesthetic-modal {
+  margin: auto; /* Bulletproof centering fallback */
+  background: rgba(22, 20, 18, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08); 
+  padding: 36px 32px; 
+  border-radius: 28px; 
+  width: 90%; 
+  max-width: 380px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 24px; 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* --- AESTHETIC DEFAULT PLAYLIST COVER --- */
+.aesthetic-default-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* A deep, moody gradient that matches your theme */
+  background: linear-gradient(135deg, #1c1a18 0%, #0a0908 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adds a subtle lighting effect inside the default cover */
+.aesthetic-default-cover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}

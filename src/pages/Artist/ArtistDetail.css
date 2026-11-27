@@ -1,0 +1,78 @@
+/* =========================================
+   ARTIST SPECIFIC OVERRIDES
+   ========================================= */
+.artist-hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 40px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 40vh;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.verified-icon {
+  background: #3d91f4; /* Blue verified check background */
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-massive-title {
+  font-size: clamp(3rem, 8vw, 6rem); /* Scales beautifully based on screen size */
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  line-height: 1;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.monthly-listeners {
+  font-size: 1rem;
+  color: #b3b3b3;
+  font-weight: 500;
+  margin: 0;
+}
+
+.see-more-btn {
+  background: transparent;
+  color: #b3b3b3;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 16px 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.see-more-btn:hover {
+  color: #fff;
+}
+
+/* Reusable Album Shelf */
+.artist-album-shelf {
+  padding: 0 20px 40px 20px;
+}
+
+.shelf-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}

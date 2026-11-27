@@ -27,7 +27,7 @@ export default function Login() {
 
     try {
       const res = await fetch(
-        "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/auth/login",
+        "http://192.168.0.103:5000/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -52,8 +52,15 @@ export default function Login() {
   };
 
   return (
-    <div className="screen-container fade-in">
-      <h2 style={{ fontSize: "2.5rem", marginBottom: "10px", color: "green" }}>
+    <div className="screen-container fade-in" style={{ minHeight: "100dvh" }}>
+      <h2
+        style={{
+          fontFamily: "var(--font-editorial, serif)",
+          fontSize: "2.8rem",
+          marginBottom: "10px",
+          color: "#ffe5b6",
+        }}
+      >
         Welcome Back
       </h2>
       <p className="subtitle">Pick up where you left off.</p>

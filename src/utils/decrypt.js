@@ -6,14 +6,12 @@ import CryptoJS from "crypto-js";
  * @returns {Array<{quality: string, url: string}>} - Array of qualities and direct mp4 links.
  */
 export const getDownloadLinks = (encryptedUrl) => {
-  // 1. Guard Clause: If the URL is missing or invalid, fail silently and safely.
   if (!encryptedUrl || typeof encryptedUrl !== "string") {
     console.warn("Decryption skipped: No valid encrypted URL provided.");
     return [];
   }
 
   try {
-    // 2. The static master key used by JioSaavn's DES encryption
     const JIOSAAVN_KEY = CryptoJS.enc.Utf8.parse("38346591");
 
     // 3. Decrypt the DES-ECB payload
@@ -28,7 +26,7 @@ export const getDownloadLinks = (encryptedUrl) => {
 
     // 4. Convert decrypted bytes to standard string (This yields the base URL)
     const baseUrl = decrypted.toString(CryptoJS.enc.Utf8);
-    console.log("Decrypted base URL:", baseUrl);
+    // console.log("Decrypted base URL:", baseUrl);
 
     // Fail-safe if decryption results in an empty string (e.g., algorithm mismatch)
     if (!baseUrl) {

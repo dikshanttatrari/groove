@@ -1,0 +1,133 @@
+.shared-page-padding {
+  padding-bottom: 120px; /* Accounts for mini player */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔥 THE SILVER BULLET: Locks to the phone screen, ignoring React padding/margins */
+.shared-bg-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shared-bg {
+  position: absolute;
+  top: -10%; left: -10%; right: -10%; bottom: -10%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px);
+  opacity: 0.65;
+}
+
+.shared-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Smooth gradient that fades perfectly into your app's native #110f0d dark mode */
+  background: linear-gradient(180deg, rgba(17, 15, 13, 0.3) 0%, rgba(17, 15, 13, 0.85) 60%, #110f0d 100%);
+}
+
+.shared-header {
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+/* Perfect frosted glass button */
+.shared-back-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.shared-back-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.shared-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px 80px 30px;
+  text-align: center;
+  z-index: 10;
+}
+
+.shared-cover {
+  width: 270px;
+  height: 270px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  margin-bottom: 35px;
+  object-fit: cover;
+}
+
+.shared-title {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.shared-artist {
+  color: #a89f98;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.shared-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
+}
+
+.shared-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1DB954;
+  color: #000;
+  font-size: 1.05rem;
+  padding: 16px 45px;
+  border-radius: 500px;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: max-content;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(29, 185, 84, 0.3);
+}
+
+.shared-icon-btn {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

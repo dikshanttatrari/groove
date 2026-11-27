@@ -32,11 +32,14 @@ export default function Register() {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/auth/request-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: formData.email }),
-      });
+      const res = await fetch(
+        "http://192.168.0.103:5000/api/auth/request-otp",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: formData.email }),
+        },
+      );
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.msg || "Failed to send code");
@@ -58,7 +61,7 @@ export default function Register() {
 
     try {
       const res = await fetch(
-        "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/api/auth/verify-otp",
+        "http://192.168.0.103:5000/api/auth/verify-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -13,7 +13,9 @@ export default defineConfig({
       },
       manifest: {
         name: "Groove Music",
-        short_name: "Groove Music",
+        short_name: "GrooveMusic",
+        start_url: "/",
+        scope: "/",
         theme_color: "#110f0d",
         background_color: "#110f0d",
         display: "standalone",
@@ -35,11 +37,10 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target:
-          "https://groove-j2szeaw7j-dikshants-projects-9f5680cd.vercel.app/",
+        target: "http://192.168.0.103:5000/",
         changeOrigin: true,
       },
     },
   },
-  base: "/groove/",
+  base: "/",
 });
