@@ -1,1 +1,35 @@
-if(!self.define){let e,i={};const n=(n,s)=>(n=new URL(n+".js",s).href,i[n]||new Promise(i=>{if("document"in self){const e=document.createElement("script");e.src=n,e.onload=i,document.head.appendChild(e)}else e=n,importScripts(n),i()}).then(()=>{let e=i[n];if(!e)throw new Error(`Module ${n} didn’t register its module`);return e}));self.define=(s,r)=>{const t=e||("document"in self?document.currentScript.src:"")||location.href;if(i[t])return;let o={};const c=e=>n(e,t),d={module:{uri:t},exports:o,require:c};i[t]=Promise.all(s.map(e=>d[e]||c(e))).then(e=>(r(...e),o))}}define(["./workbox-9c191d2f"],function(e){"use strict";self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"registerSW.js",revision:"1872c500de691dce40960bb85481de07"},{url:"index.html",revision:"59659d2754418a4fdc4a043ab2c2fe44"},{url:"assets/index-Pjc2nIb2.css",revision:null},{url:"assets/index-B20DVuXF.js",revision:null},{url:"icon-192.png",revision:"f1bcb2b9e00a4cb65beb9ef8ddcd8805"},{url:"icon-512.png",revision:"466daeb9e98b0d6e873898950f8b88cd"},{url:"manifest.webmanifest",revision:"c5b09ecb5fb585ce95a679c935718368"}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("index.html"),{denylist:[/^\/api/]}))});
+const CACHE_NAME = "groove-image-cache";
+
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+});
+
+self.addEventListener("fetch", (event) => {
+  const requestUrl = new URL(event.request.url);
+
+  if (
+    event.request.destination === "image" ||
+    requestUrl.pathname.match(/\.(png|jpg|jpeg|svg|gif)$/i)
+  ) {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+
+        return fetch(event.request)
+          .then((networkResponse) => {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+
+            return networkResponse;
+          })
+          .catch(() => {
+            return null;
+          });
+      }),
+    );
+  }
+});
